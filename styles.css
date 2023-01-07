@@ -1,0 +1,38 @@
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+#mainbody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 65%;
+  margin: 5% auto 5%;
+  gap: 1rem;
+}
+.input-flex {
+  display: flex;
+  flex-direction: row;
+}
+#list-item {
+  border: 0.1rem pink solid;
+  padding: 0.5rem;
+  width: 30rem;
+}
+.submit-btn {
+  width: auto;
+  padding: 0.5rem 2rem;
+  border: 0.1rem pink solid;
+  font-size: smaller;
+}
+
+.clear-btn {
+  border: none;
+  letter-spacing: 0.5rem;
+  background-color: white;
+  color: red;
+}
