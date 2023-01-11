@@ -1,7 +1,7 @@
 * {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   box-sizing: border-box;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   margin: 0;
   padding: 0;
 }
@@ -14,25 +14,61 @@
   margin: 5% auto 5%;
   gap: 1rem;
 }
+
+/* add box */
+
 .input-flex {
   display: flex;
   flex-direction: row;
 }
 #list-item {
-  border: 0.1rem pink solid;
+  border: 0.1rem rgb(183, 114, 185) solid;
+  border-right: none;
   padding: 0.5rem;
   width: 30rem;
 }
-.submit-btn {
+.add-btn {
   width: auto;
   padding: 0.5rem 2rem;
-  border: 0.1rem pink solid;
+  border: 0.1rem rgb(183, 114, 185) solid;
   font-size: smaller;
 }
+
+/* list */
+.list-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  visibility: hidden;
+}
+.grocery-item {
+  display: flex;
+  gap: 20rem;
+}
+
+.btn-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.edit-btn {
+  border: none;
+  background-color: white;
+  color: rgb(100, 216, 100);
+}
+.delete-btn {
+  border: none;
+  background-color: white;
+  color: rgb(224, 38, 38);
+}
+
+/* clear button */
 
 .clear-btn {
   border: none;
   letter-spacing: 0.5rem;
   background-color: white;
-  color: red;
+  color: rgb(224, 38, 38);
+  margin-top: 2rem;
+  text-align: center;
 }
