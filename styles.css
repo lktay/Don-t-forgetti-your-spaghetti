@@ -6,13 +6,35 @@
   padding: 0;
 }
 
+.alert {
+  height: 2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.alert-danger {
+  background-color: rgb(224, 38, 38);
+  color: rgb(100, 0, 14);
+}
+.alert-success {
+  background-color: rgb(183, 114, 185);
+  color: rgb(70, 29, 71);
+}
+
 #mainbody {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 65%;
-  margin: 5% auto 5%;
+  margin: 3% auto 5%;
   gap: 1rem;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 2px rgb(183, 114, 185);
 }
 
 /* add box */
@@ -28,7 +50,7 @@
   width: 30rem;
 }
 .add-btn {
-  width: auto;
+  width: 6rem;
   padding: 0.5rem 2rem;
   border: 0.1rem rgb(183, 114, 185) solid;
   font-size: smaller;
@@ -38,12 +60,23 @@
 .list-container {
   display: flex;
   flex-direction: column;
-  margin-top: 1rem;
   visibility: hidden;
+  border: 0.1rem rgb(183, 114, 185) solid;
+  width: 36rem;
+}
+
+.show-container {
+  visibility: visible;
 }
 .grocery-item {
   display: flex;
-  gap: 20rem;
+  justify-content: space-between;
+  margin: 0.3rem auto;
+  padding: 0 0.5rem 0.5rem;
+  border-bottom: 0.1rem rgb(183, 114, 185) dotted;
+}
+.grocery-item:last-of-type {
+  border-bottom: none;
 }
 
 .btn-container {
@@ -69,6 +102,6 @@
   letter-spacing: 0.5rem;
   background-color: white;
   color: rgb(224, 38, 38);
-  margin-top: 2rem;
+  margin-top: 0.5rem;
   text-align: center;
 }

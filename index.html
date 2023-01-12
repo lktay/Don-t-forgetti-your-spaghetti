@@ -14,32 +14,21 @@
   <body>
     <section id="mainbody">
       <!-- form -->
-      <form class="grocery-list"></form>
-      <p class="alert"></p>
-      <h2>Don't forgetti your spaghetti!</h2>
-      <div class="input-flex">
-        <input
-          type="text"
-          id="list-item"
-          placeholder="What do we need to buy today...?"
-        />
-        <button type="submit" class="add-btn">Add</button>
-      </div>
+      <form class="grocery-form">
+        <p class="alert"></p>
+        <h2>Don't forgetti your spaghetti!</h2>
+        <div class="input-flex">
+          <input
+            type="text"
+            id="list-item"
+            placeholder="What do we need to buy today...?"
+          />
+          <button type="submit" class="add-btn">Add</button>
+        </div>
+      </form>
       <!-- list -->
       <div class="list-container">
-        <div class="grocery-list">
-          <article class="grocery-item">
-            <p class="item-name">test</p>
-            <div class="btn-container">
-              <button type="button" class="edit-btn">
-                <i class="fa-solid fa-pen-to-square"></i>
-              </button>
-              <button type="button" class="delete-btn">
-                <i class="fa-solid fa-trash"></i>
-              </button>
-            </div>
-          </article>
-        </div>
+        <div class="grocery-list"></div>
         <!-- button -->
         <button type="button" class="clear-btn">clear list</button>
       </div>
