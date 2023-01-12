@@ -24,14 +24,15 @@ function addItem(e) {
   const id = new Date().getTime().toString();
 
 if(value !== "" && editFlag === false){
+  //making the article to hole p (item name) and buttons (clear and remove)
   const element = document.createElement("article");
-  //add class
+  //add class to new article
   element.classList.add("grocery-item");
-  //add ID
+  //add ID to new article
   const attribute = document.createAttribute("data-id");
   attribute.value = id;
   element.setAttributeNode(attribute);
-  //creating the item
+  //creating the item (p and button container)
   element.innerHTML = `            <p class="item-name">${value}</p>
   <div class="btn-container">
     <button type="button" class="edit-btn">
@@ -41,15 +42,16 @@ if(value !== "" && editFlag === false){
       <i class="fa-solid fa-trash"></i>
     </button>
   </div>`;
+  //as the buttons only exist within these conditions, these can be accessed here
+
 const editBtn = element.querySelector(".edit-btn")
 const deleteBtn = element.querySelector(".delete-btn")
-//as the buttons only exist within these conditions
+//functions editItem deleteItem defined latergit 
 editBtn.addEventListener("click",editItem);
 deleteBtn.addEventListener("click",deleteItem);
-  //append item to list
-  list.appendChild(element);
 
-  //display success
+  //append item to list (grocery-list div)
+  list.appendChild(element);
   displayAlert("Item added!", "success");
 
   //add container (visibility > visible)

@@ -26,7 +26,7 @@
   flex-direction: column;
   align-items: center;
   width: 65%;
-  margin: 3% auto 5%;
+  margin: 3% auto 0;
   gap: 1rem;
 }
 
@@ -99,9 +99,18 @@ h2 {
 
 .clear-btn {
   border: none;
-  letter-spacing: 0.5rem;
+  letter-spacing: 0.2rem;
   background-color: white;
   color: rgb(224, 38, 38);
   margin-top: 0.5rem;
   text-align: center;
+}
+
+footer {
+  display: flex;
+}
+footer a {
+  color: rgb(183, 114, 185);
+  text-align: center;
+  margin: 0 auto;
 }
