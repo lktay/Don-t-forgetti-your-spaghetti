@@ -12,10 +12,10 @@ const clearBtn = document.querySelector(".clear-btn");
 let editElement;
 let editFlag = false;
 let editID = "";
-// event listeners
 
-// submit form
+// event listeners
 form.addEventListener("submit", addItem);
+clearBtn.addEventListener("click", clearList);
 
 //functions
 function addItem(e) {
@@ -41,25 +41,35 @@ if(value !== "" && editFlag === false){
       <i class="fa-solid fa-trash"></i>
     </button>
   </div>`;
+const editBtn = element.querySelector(".edit-btn")
+const deleteBtn = element.querySelector(".delete-btn")
+//as the buttons only exist within these conditions
+editBtn.addEventListener("click",editItem);
+deleteBtn.addEventListener("click",deleteItem);
   //append item to list
   list.appendChild(element);
+
   //display success
   displayAlert("Item added!", "success");
+
   //add container (visibility > visible)
   container.classList.add("show-container");
-  //add to local storage
-  addToLocalS(id, value);
+
   //set to default
   setToDefault();
 
 }
 else if(value !== "" && editFlag === true){
-  console.log("Editing");
+editElement.innerHTML = value;
+displayAlert("Item edited", "success")
+setToDefault();
+
 }
 else{
 displayAlert("Please type an item", "danger")
 }
 }
+
 //display alert
 function displayAlert(text, color){
   alert.textContent = text;
@@ -69,19 +79,50 @@ alert.classList.add(`alert-${color}`);
 setTimeout(function(){
   alert.textContent = "";
   alert.classList.remove(`alert-${color}`);
-}, 1500);
+}, 500);
+}
+
+//clear list
+
+function clearList(){
+  const items = document.querySelectorAll(".grocery-item")
+
+if (items.length > 0){
+  items.forEach(function(item){
+    list.removeChild(item);
+  })
+}
+container.classList.remove("show-container");
+displayAlert("List cleared", "danger");
+setToDefault();
 }
 
 //set to default
 function setToDefault(){
-  console.log("set to default");
+grocery.value = "";
+editFlag = false;
+editID = "";
+addBtn.textContent = "Add"
 }
 
-
-// local storage
-
-function addToLocalS(id, value) {
-  console.log("added to local storage")
+//delete function
+function deleteItem(e){
+const element = e.currentTarget.parentElement.parentElement;
+const id = element.dataset.id;
+list.removeChild(element);
+if(list.children.length === 0){
+  container.classList.remove("show-container");
 }
-
-//setup items?
+displayAlert("Item removed", "danger")
+}
+//edit function
+function editItem(e){
+  const element = e.currentTarget.parentElement.parentElement;
+  //set edit item
+  editElement = e.currentTarget.parentElement.previousElementSibling;
+  //set form value
+  grocery.value = editElement.innerHTML;
+  editFlag = true;
+  editID = element.dataset.id;
+  addBtn.textContent = "Edit";
+}
